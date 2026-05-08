@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -131,7 +132,9 @@ class _PantallaDispositivoState extends State<PantallaDispositivo> {
 
       // ¡ESTO ES VITAL PARA RECIBIR LA TRAMA COMPLETA!
       await widget.dispositivo.requestMtu(512);
-
+      if (Platform.isAndroid) {
+        await widget.dispositivo.requestMtu(512); 
+      }
       List<BluetoothService> servicios = await widget.dispositivo
           .discoverServices();
 
