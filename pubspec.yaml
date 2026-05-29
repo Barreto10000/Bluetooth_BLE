@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_blue_plus: 1.15.0
+  shared_preferences: ^2.2.2  # Para guardar los límites
+  flutter_local_notifications: ^17.0.0 # Para las alertas push
 
 dev_dependencies:
   flutter_test:
